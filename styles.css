@@ -1,0 +1,55 @@
+
+:root {
+    
+  --text-col: #f40;
+  --border-col: #08f;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background: #000;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 136px;
+  font-weight: 200;
+  font-style: italic;
+  color: #fff;
+  padding: 40px;
+  border: 10px solid #fff;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  animation: glowblinker 3s infinite alternate;     
+}
+
+@keyframes glowblinker {
+    
+    0%, 19%, 23%, 27%, 53%, 58%, 100% {
+      
+        text-shadow:
+            -2px -2px 8px #fff,
+            2px 2px 8px #fff,
+            0 0 15px var(--text-col),
+            0 0 30px var(--text-col),
+            0 0 45px var(--text-col),
+            0 0 60px var(--text-col),
+            0 0 75px var(--text-col);
+        
+        box-shadow:
+            0 0 5px #fff,
+            inset 0 0 5px #fff,
+            0 0 15px var(--border-col),
+            inset 0 0 15px var(--border-col),
+            0 0 30px var(--border-col),
+            inset 0 0 30px var(--border-col);        
+    }
+    
+    21%, 25%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
+    }    
+}
